@@ -1,7 +1,10 @@
+"use client"
+
 import Link from "next/link"
+import axios from "axios"
 
 import { siteConfig } from "@/config/site"
-import { buttonVariants } from "@/components/ui/button"
+import { Button, buttonVariants } from "@/components/ui/button"
 
 export default function IndexPage() {
   return (
