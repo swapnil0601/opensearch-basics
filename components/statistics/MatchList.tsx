@@ -22,15 +22,15 @@ import axios from 'axios';
 const MatchList = () => {
     const [matchType,setMatchType] = useState("qualifier");
     const [matchList, setMatchList] = useState([]);
-    const query = {
-          "bool": {
-            "must": [
-              { "match": { "match_type": `${matchType}` }}
-            ]
-          }
-      };
     useEffect(() => {
-        function getMatchList() {
+      const query = {
+            "bool": {
+              "must": [
+                { "match": { "match_type": `${matchType}` }}
+              ]
+            }
+        };
+      function getMatchList() {
             axios.post(
                 "https://localhost:9200/icc2023/_search",
                 { "query": query },

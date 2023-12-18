@@ -1,11 +1,6 @@
 "use client"
-
-import { useEffect } from "react"
 import { Metadata } from "next"
-import axios from "axios"
 
-import { encodedToken } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
 import {
   Card,
   CardContent,
@@ -13,9 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import { Overview } from "@/components/overview"
-import { PieDistribution } from "@/components/piechart"
-import { Award, LayoutList, Trophy } from "lucide-react"
+import { Award } from "lucide-react"
 import TotalRuns from "@/components/statistics/TotalRuns"
 import TotalWickets from "@/components/statistics/TotalWickets"
 import TotalMatches from "@/components/statistics/TotalMatches"
