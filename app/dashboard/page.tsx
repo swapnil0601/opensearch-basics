@@ -14,11 +14,6 @@ import TotalWickets from "@/components/statistics/TotalWickets"
 import TotalMatches from "@/components/statistics/TotalMatches"
 import MatchList from "@/components/statistics/MatchList"
 
-// export const metadata: Metadata = {
-//   title: "Dashboard",
-//   description: "Dashboard page",
-// }
-
 export default function Dashboard() {
   
   return (

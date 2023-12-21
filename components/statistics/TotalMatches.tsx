@@ -1,11 +1,11 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card"
 import { Trophy } from "lucide-react"
 import axios from "axios"
 
 const TotalMatches = () => {
     const query = "Select Count(*) as total_matches from icc2023";
-    const [totalMatches, setTotalMatches] = React.useState(0);
+    const [totalMatches, setTotalMatches] = useState(15);
     useEffect(() => {
         function getTotalMatches() {
             axios.post(

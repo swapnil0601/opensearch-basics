@@ -1,11 +1,11 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card"
 import { Trophy } from "lucide-react"
 import axios from "axios"
 
 const TotalRuns = () => {
     const query = "SELECT SUM(team1_runs + team2_runs) AS total_runs from icc2023";
-    const [totalRuns, setTotalRuns] = React.useState(0);
+    const [totalRuns, setTotalRuns] = useState(8730);
     useEffect(() => {
         function getTotalRuns() {
             axios.post(

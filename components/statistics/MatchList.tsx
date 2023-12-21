@@ -19,9 +19,11 @@ import {
     SelectValue,
   } from "@/components/ui/select"
 import axios from 'axios';
+import { useInsecureAxios } from '@/lib/utils';
+import {MATCH_DATA} from '@/lib/data';
 const MatchList = () => {
     const [matchType,setMatchType] = useState("qualifier");
-    const [matchList, setMatchList] = useState([]);
+    const [matchList, setMatchList] = useState(MATCH_DATA);
     useEffect(() => {
       const query = {
             "bool": {
@@ -30,6 +32,7 @@ const MatchList = () => {
               ]
             }
         };
+        setMatchList(MATCH_DATA.filter((match)=>match._source.match_type===matchType));
       function getMatchList() {
             axios.post(
                 "https://localhost:9200/icc2023/_search",
@@ -84,7 +87,7 @@ const MatchList = () => {
       </TableHeader>
       <TableBody>
         {matchList.map((match) => (
-            <TableRow key={match._source._id}>
+            <TableRow key={match._id}>
                 <TableCell>{match._source.match_type}</TableCell>
                 <TableCell>{match._source.team1}</TableCell>
                 <TableCell>{match._source.team1_runs}</TableCell>

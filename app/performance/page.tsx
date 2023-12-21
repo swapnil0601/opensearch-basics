@@ -15,7 +15,6 @@ export default function Performance() {
   return (
     <>
       <div className="grid gap-4 p-5 md:grid-cols-2 lg:grid-cols-4">
-        {/* Can be made into a Card Component later */}
         <Card className="hover:cursor-pointer hover:bg-gray-300/50" onClick={()=>router.push("country/india")}>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Team</CardTitle>
